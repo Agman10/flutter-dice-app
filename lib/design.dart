@@ -19,6 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _dice1 = 0;
   int _dice2 = 0;
   int _dice3 = 0;
+  int _dice4 = 0;
+  int _dice5 = 0;
   String _name = "You";
   //final TextEditingController controller = new TextEditingController();
   //TextEditingController _name = new TextEditingController();
@@ -28,6 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _dice1 = rng(1, 7);
       _dice2 = rng(1, 7);
       _dice3 = rng(1, 7);
+      _dice4 = rng(1, 7);
+      _dice5 = rng(1, 7);
     });
   }
 
@@ -46,6 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
   void _diceRoll3() {
     setState(() {
       _dice3 = rng(1, 7);
+    });
+  }
+
+  void _diceRoll4() {
+    setState(() {
+      _dice4 = rng(1, 7);
+    });
+  }
+
+  void _diceRoll5() {
+    setState(() {
+      _dice5 = rng(1, 7);
     });
   }
 
@@ -75,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 25, color: Colors.deepPurple[900]),
             ),
             Text(
-              '$_dice1, $_dice2, $_dice3',
+              '$_dice1, $_dice2, $_dice3, $_dice4, $_dice5',
               style: TextStyle(fontSize: 75, color: Colors.deepPurple[300]),
               //style: Theme.of(context).textTheme.display1, textScaleFactor: 2,
             ),
@@ -102,6 +118,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   new RaisedButton(
                     onPressed: _diceRoll3,
+                    color: Colors.deepPurple,
+                    child: Icon(
+                      Icons.casino,
+                      color: Colors.white,
+                    ),
+                  ),
+                  new RaisedButton(
+                    onPressed: _diceRoll4,
+                    color: Colors.deepPurple,
+                    child: Icon(
+                      Icons.casino,
+                      color: Colors.white,
+                    ),
+                  ),
+                  new RaisedButton(
+                    onPressed: _diceRoll5,
                     color: Colors.deepPurple,
                     child: Icon(
                       Icons.casino,
